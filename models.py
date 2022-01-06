@@ -1,3 +1,7 @@
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
 class TVAModel_(nn.Module): # trimodal self-attn model  
     def __init__(self, params):
         super(TVAModel_, self).__init__()
