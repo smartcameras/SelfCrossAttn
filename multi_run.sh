@@ -1,6 +1,6 @@
 #!/bin/bash
 
-log=tva_fold1_vQ.txt
+log=tva_fold1.txt
 # create log file or overwrite if already present
 printf "Log File - " > $log
 # append date to log file
@@ -14,7 +14,7 @@ do
 
 done
 
-log=tva_fold2_vQ.txt
+log=tva_fold2.txt
 # create log file or overwrite if already present
 printf "Log File - " > $log
 # append date to log file
@@ -28,7 +28,7 @@ do
 
 done
 
-log=tva_fold3_vQ.txt
+log=tva_fold3.txt
 # create log file or overwrite if already present
 printf "Log File - " > $log
 # append date to log file
@@ -42,7 +42,7 @@ do
 
 done
 
-log=tva_fold4_vQ.txt
+log=tva_fold4.txt
 # create log file or overwrite if already present
 printf "Log File - " > $log
 # append date to log file
@@ -56,7 +56,7 @@ do
 
 done
 
-log=tva_fold5_vQ.txt
+log=tva_fold5.txt
 # create log file or overwrite if already present
 printf "Log File - " > $log
 # append date to log file
