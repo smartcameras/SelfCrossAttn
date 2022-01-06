@@ -1,13 +1,13 @@
 import torch
 from torch import nn
-import model_audio
+import models
 import torch.optim as optim
 from torch.optim.lr_scheduler import ReduceLROnPlateau
 from data_utils import save_model, load_model, weighted_accuracy, unweighted_accuracy, weighted_precision, unweighted_precision
 import sys
 
 def initiate(hyp_params, train_loader, dev_loader, test_loader):
-    tva_model = getattr(model_audio, 'TVAModel_')(hyp_params)
+    tva_model = getattr(models, 'TVAModel_')(hyp_params)
     tva_model = tva_model.double().to('cuda')
     #import pdb
     #pdb.set_trace()
