@@ -143,7 +143,7 @@ if __name__ == '__main__':
     params.n_test = len(x_text)
     # train
     params.num_epochs = 20000 # give a random big number
-    params.when = 10 # early stop patience
+    params.when = 10 # reduce LR patience
     params.txt_dim = 300
     params.vid_dim = 2048
     params.aud_dim = 120
