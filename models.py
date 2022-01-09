@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-class TVAModel_(nn.Module): # trimodal self-attn model  
+class TVAModel_Self(nn.Module): # trimodal self-attn model  
     def __init__(self, params):
         super(TVAModel_, self).__init__()
         rnn = nn.LSTM if params.rnntype == "lstm" else nn.GRU
@@ -51,7 +51,7 @@ class TVAModel_(nn.Module): # trimodal self-attn model
         return y, x_tva
     
     
-class TVAModel(nn.Module): # trimodal cross-attn model
+class TVAModel_Cross(nn.Module): # trimodal cross-attn model
     def __init__(self, params):
         super(TVAModel, self).__init__()
         rnn = nn.LSTM if params.rnntype == "lstm" else nn.GRU
