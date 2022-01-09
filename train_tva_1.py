@@ -7,7 +7,7 @@ from data_utils import save_model, load_model, weighted_accuracy, unweighted_acc
 import sys
 
 def initiate(hyp_params, train_loader, dev_loader, test_loader):
-    tva_model = getattr(models, 'TVAModel_')(hyp_params)
+    tva_model = getattr(models, 'TVAModel_Self')(hyp_params)
     tva_model = tva_model.double().to('cuda')
     #import pdb
     #pdb.set_trace()
