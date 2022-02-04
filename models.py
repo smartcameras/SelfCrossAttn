@@ -29,23 +29,23 @@ class TVAModel_Self(nn.Module): # trimodal self-attn model
 
     def forward(self, x_txt, x_vid, x_mfcc, emb_dp=0.25):
         # text branch
-        x_txt = F.dropout(x_txt, p=emb_dp, training=self.training) # [32, 128, 300]
-        x_txt, h = self.text_encoder(x_txt) # [32, 128, 400]
-        x_txt, _ = self.mha_t(x_txt,x_txt,x_txt) # [32, 128, 400]
+        x_txt = F.dropout(x_txt, p=emb_dp, training=self.training) 
+        x_txt, h = self.text_encoder(x_txt) 
+        x_txt, _ = self.mha_t(x_txt,x_txt,x_txt) 
         x_txt2 = torch.mean(x_txt, dim=1)
         # video branch
         x_vid = self.video_conv(x_vid)
         x_vid, h = self.video_encoder(x_vid)
-        x_vid, _ = self.mha_v(x_vid, x_vid, x_vid) # [32, 25, 400]
+        x_vid, _ = self.mha_v(x_vid, x_vid, x_vid) 
         x_vid2 = torch.mean(x_vid, dim=1)
         # audio branch
         x_mfcc = self.audio_conv(x_mfcc)
         x_mfcc, h = self.audio_encoder(x_mfcc)
         x_mfcc, _ = self.mha_a(x_mfcc, x_mfcc, x_mfcc)
         x_mfcc2 = torch.mean(x_mfcc, dim=1)
-        x_tva1 = torch.stack((x_txt2, x_vid2, x_mfcc2), dim=1) # [32, 3, 240]
+        x_tva1 = torch.stack((x_txt2, x_vid2, x_mfcc2), dim=1) 
         x_tva1_mean, x_tva1_std = torch.std_mean(x_tva1, dim=1)
-        x_tva = torch.cat((x_tva1_mean, x_tva1_std), dim=1) # [32, 480]
+        x_tva = torch.cat((x_tva1_mean, x_tva1_std), dim=1) 
         x_tva = self.concat_linear(x_tva)
         y = self.classifier(x_tva) # [32, 7]
         return y, x_tva
@@ -84,8 +84,8 @@ class TVAModel_Cross(nn.Module): # trimodal cross-attn model
 
     def forward(self, x_txt, x_vid, x_mfcc, emb_dp=0.25):
         # text branch
-        x_txt = F.dropout(x_txt, p=emb_dp, training=self.training) # [32, 128, 300]
-        x_txt, h = self.text_encoder(x_txt) # [32, 128, 400]
+        x_txt = F.dropout(x_txt, p=emb_dp, training=self.training) 
+        x_txt, h = self.text_encoder(x_txt) 
         # video branch
         x_vid = self.video_conv(x_vid)
         x_vid, h = self.video_encoder(x_vid)
@@ -94,7 +94,7 @@ class TVAModel_Cross(nn.Module): # trimodal cross-attn model
         x_mfcc, h = self.audio_encoder(x_mfcc)
         ##### V,A -> T
         # video to text
-        x_v2t, _ = self.mha_v_t(x_txt, x_vid, x_vid) # [32, 128, 400]
+        x_v2t, _ = self.mha_v_t(x_txt, x_vid, x_vid) 
         x_v2t = torch.mean(x_v2t, dim=1)
         # audio to text
         x_a2t, _ = self.mha_a_t(x_txt, x_mfcc, x_mfcc)
@@ -102,7 +102,7 @@ class TVAModel_Cross(nn.Module): # trimodal cross-attn model
         # addition
         ####### T,A -> V
         # text to video
-        x_t2v, _ = self.mha_t_v(x_vid, x_txt, x_txt) # [32, 25, 400]
+        x_t2v, _ = self.mha_t_v(x_vid, x_txt, x_txt) 
         x_t2v = torch.mean(x_t2v, dim=1)
         # audio to video
         x_a2v, _ = self.mha_a_v(x_vid, x_mfcc, x_mfcc)
@@ -118,9 +118,9 @@ class TVAModel_Cross(nn.Module): # trimodal cross-attn model
         # addition
         #import pdb
         #pdb.set_trace()
-        x_tva2 = torch.stack((x_a2t, x_v2t, x_t2v, x_a2v, x_t2a, x_v2a), dim=1) # [32, 6, 120]
+        x_tva2 = torch.stack((x_a2t, x_v2t, x_t2v, x_a2v, x_t2a, x_v2a), dim=1) 
         x_tva2_mean, x_tva2_std = torch.std_mean(x_tva2, dim=1)
-        x_tva2 = torch.cat((x_tva2_mean, x_tva2_std), dim=1) # [32, 240]
+        x_tva2 = torch.cat((x_tva2_mean, x_tva2_std), dim=1) 
         x_tva = x_tva2
         x_tva = self.concat_linear(x_tva)
         y = self.classifier(x_tva) # [32, 7]
