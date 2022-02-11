@@ -11,7 +11,7 @@ if __name__ == '__main__':
     # get arguments
     p = argparse.ArgumentParser()
     p.add_argument('--seed', type=int, default=1)
-    p.add_argument('--data_path', type=str, default='/jmain02/home/J2AD007/txk47/vxr25-txk47/From_Jade1/processed_Yoon/IEMOCAP/seven_category_120/folds/fold01')
+    p.add_argument('--data_path', type=str, default='/processed_Yoon/IEMOCAP/seven_category_120/folds/fold01')
     p.add_argument('--batch_size', type=int, default=32)
     p.add_argument('--lr', type=float, default=1e-3)
     p.add_argument('--rnntype', type=str, default='gru')
