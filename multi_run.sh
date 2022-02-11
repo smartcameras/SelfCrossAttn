@@ -10,7 +10,7 @@ for i in 1 2 3 4 5 6 7 8 9 10
 
 do
   echo $i
-  python main_tva_1.py --seed $i --data_path '/jmain02/home/J2AD007/txk47/vxr25-txk47/From_Jade1/processed_Yoon/IEMOCAP/seven_category_120/folds/fold01' >> $log
+  python main_tva_1.py --seed $i --data_path '/processed_Yoon/IEMOCAP/seven_category_120/folds/fold01' >> $log
 
 done
 
@@ -24,7 +24,7 @@ for i in 1 2 3 4 5 6 7 8 9 10
 
 do
   echo $i
-  python main_tva_1.py --seed $i --data_path '/jmain02/home/J2AD007/txk47/vxr25-txk47/From_Jade1/processed_Yoon/IEMOCAP/seven_category_120/folds/fold02' >> $log
+  python main_tva_1.py --seed $i --data_path '/processed_Yoon/IEMOCAP/seven_category_120/folds/fold02' >> $log
 
 done
 
@@ -38,7 +38,7 @@ for i in 1 2 3 4 5 6 7 8 9 10
 
 do
   echo $i
-  python main_tva_1.py --seed $i --data_path '/jmain02/home/J2AD007/txk47/vxr25-txk47/From_Jade1/processed_Yoon/IEMOCAP/seven_category_120/folds/fold03' >> $log
+  python main_tva_1.py --seed $i --data_path '/processed_Yoon/IEMOCAP/seven_category_120/folds/fold03' >> $log
 
 done
 
@@ -52,7 +52,7 @@ for i in 1 2 3 4 5 6 7 8 9 10
 
 do
   echo $i
-  python main_tva_1.py --seed $i --data_path '/jmain02/home/J2AD007/txk47/vxr25-txk47/From_Jade1/processed_Yoon/IEMOCAP/seven_category_120/folds/fold04' >> $log
+  python main_tva_1.py --seed $i --data_path '/processed_Yoon/IEMOCAP/seven_category_120/folds/fold04' >> $log
 
 done
 
@@ -66,6 +66,6 @@ for i in 1 2 3 4 5 6 7 8 9 10
 
 do
   echo $i
-  python main_tva_1.py --seed $i --data_path '/jmain02/home/J2AD007/txk47/vxr25-txk47/From_Jade1/processed_Yoon/IEMOCAP/seven_category_120/folds/fold05' >> $log
+  python main_tva_1.py --seed $i --data_path '/processed_Yoon/IEMOCAP/seven_category_120/folds/fold05' >> $log
 
 done
