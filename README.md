@@ -16,7 +16,7 @@ brings compared to the corresponding self-attention mechanism. To this end, we i
 model. In addition to attention, each model uses convolutional layers for local feature extraction and recurrent layers for
 global sequential modelling. We compare the models using different modality combinations for a 7-class emotion classification
 task using the IEMOCAP dataset. Experimental results indicate that albeit both models improve upon the state-of-the-art in terms
-of weighted and unweighted accuracy for tri- and bi-modal configurations, their performance is generally statistically comparable. The paper has been acceptted in ICASSP 2022. 
+of weighted and unweighted accuracy for tri- and bi-modal configurations, their performance is generally statistically comparable. The paper has been accepted in ICASSP 2022. 
 
 # Usage
 To download the pre-processed IEMOCAP dataset, use the link given in https://github.com/david-yoon/attentive-modality-hopping-for-SER
