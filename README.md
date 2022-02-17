@@ -1,4 +1,7 @@
-# Code for our ICASSP 2022 paper IS CROSS-ATTENTION PREFERABLE TO SELF-ATTENTION FOR MULTI-MODAL EMOTION RECOGNITION?
+# Cross- and self-attention for multi-modal emotion recognition
+
+Code of the IEEE ICASSP 2022 paper "Is cross-attention preferable to self-attention for multi-modal emotion recognition?" <link to paper> (edited)
+
 
 To download the pre-processed IEMOCAP dataset, use the link given in https://github.com/david-yoon/attentive-modality-hopping-for-SER
 Once you have it downloaded, replace the 'data_path' in 'multi_run.sh' with your folder path.
