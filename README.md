@@ -1,4 +1,4 @@
-# Cross- and self-attention for multi-modal emotion recognition
+# Is cross-attention preferable to self-attention for multi-modal emotion recognition?
 <p align="center">
 Vandana Rajan*<sup>1</sup> , Alessio Brutti<sup>2</sup> , Andrea Cavallaro<sup>1</sup> </br>
 <sup>1</sup> Queen Mary University of London, London, United Kingdom</br>
