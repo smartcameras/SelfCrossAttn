@@ -18,7 +18,6 @@ global sequential modelling. We compare the models using different modality comb
 task using the IEMOCAP dataset. Experimental results indicate that albeit both models improve upon the state-of-the-art in terms
 of weighted and unweighted accuracy for tri- and bi-modal configurations, their performance is generally statistically comparable. The paper has been accepted in ICASSP 2022. 
 
-# Usage
 # Data
 To download the pre-processed IEMOCAP dataset, use the link given in https://github.com/david-yoon/attentive-modality-hopping-for-SER
 Once you have it downloaded, replace the 'data_path' in 'multi_run.sh' with your folder path.
