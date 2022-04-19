@@ -29,11 +29,13 @@ Use the bash file 'multi_run.sh' to run the 5 fold cross validation with 10 runs
 If you use the sample code or part of it in your research, please cite the following:
 
 ```
-@ARTICLE{Cross_Self_Attn_Rajan_Cavallaro_2022,
-       author = {{Rajan}, V. and {Cavallaro}, A.},
+@inproceedings{Cross_Self_Attn_Rajan_Cavallaro_2022,
+       author = {{Rajan}, V. and {Brutti}, A. and {Cavallaro}, A.},
         title = "{Is cross-attention preferable to self-attention for multi-modal emotion recognition?}",
-      journal = {International Conference on Acoustics, Speech, and Signal Processing},
-         year = 2022,
-        month = May,
+      booktitle = {Proceedings of the International Conference on Acoustics, Speech, and Signal Processing},
+         pages={1--1},
+         year = {2022},
+        month = {May},
+        organization={IEEE}
 }
 ```
