@@ -22,6 +22,8 @@ of weighted and unweighted accuracy for tri- and bi-modal configurations, their 
 To download the pre-processed IEMOCAP dataset, use the link given in https://github.com/david-yoon/attentive-modality-hopping-for-SER
 Once you have it downloaded, replace the 'data_path' in 'multi_run.sh' with your folder path.
 
+Note: The processed dataset repo from Dr. David Yoon contains, for each fold, '_nlp_trans.npy' and 'W_embedding.npy'. The former contains word tokens and the latter contains feature vectors for each token. Use the script pre_process_text_data.py to create the final '_text.npy' using both.
+
 # Code
 Use the bash file 'multi_run.sh' to run the 5 fold cross validation with 10 runs on each fold. Remember to do 'chmod +x ./multi_run.sh' before executing the bash file.
 
